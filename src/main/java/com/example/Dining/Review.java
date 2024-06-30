@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+
 @Getter
 @Setter
 @Entity
@@ -31,9 +32,8 @@ public class Review {
     @JdbcTypeCode(SqlTypes.FLOAT)
     @Getter @Setter private Float reviewDairy;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
-    @JdbcTypeCode(SqlTypes.VARCHAR)
-    @Getter @Setter private String status;
+    @Enumerated
+    @Column(name = "status")
+    @Getter @Setter private Status status;
 
 }
